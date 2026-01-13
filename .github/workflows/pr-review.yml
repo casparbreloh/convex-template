@@ -5,7 +5,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  claude-review:
+  pr-review:
     runs-on: ubuntu-latest
     permissions:
       contents: read
