@@ -17,8 +17,8 @@
   },
   "devDependencies": {
     "@turbo/gen": "^2.7.4",
-    "@types/node": "^25.0.6",
-    "lefthook": "^2.0.14",
+    "@types/node": "^25.0.8",
+    "lefthook": "^2.0.15",
     "oxfmt": "^0.24.0",
     "oxlint": "^1.39.0",
     "turbo": "^2.7.4"
