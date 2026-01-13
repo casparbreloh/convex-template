@@ -1,0 +1,7 @@
+pre-commit:
+  parallel: true
+  commands:
+    check:
+      run: pnpm check
+    check-types:
+      run: pnpm check-types

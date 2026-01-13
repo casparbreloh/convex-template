@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/oxfmt/configuration_schema.json",
+  "experimentalSortImports": {},
+  "experimentalSortPackageJson": {
+    "sortScripts": true
+  },
+  "experimentalTailwindcss": {},
+  "semi": false,
+  "ignorePatterns": [
+    "**/pnpm-lock.yaml",
+    "**/generators/templates/**",
+    "**/routeTree.gen.ts",
+    "**/convex/_generated/**"
+  ]
+}

@@ -1,0 +1,10 @@
+@import "@repo/ui/index.css";
+@source "../**/*.{ts,tsx}";
+@source "../../../packages/ui/src/**/*.{ts,tsx}";
+
+@utility main-container {
+  width: 100%;
+  max-width: 56rem;
+  margin-right: auto;
+  margin-left: auto;
+}

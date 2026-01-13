@@ -1,0 +1,22 @@
+{
+  "name": "@repo/backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check-types": "tsc --noEmit --emitDeclarationOnly false --project convex/tsconfig.json",
+    "clean": "git clean -xdf .cache .turbo dist node_modules",
+    "dev": "convex dev"
+  },
+  "dependencies": {
+    "@convex-dev/better-auth": "^0.10.10",
+    "better-auth": "1.4.9",
+    "convex": "^1.31.3",
+    "convex-helpers": "^0.1.109"
+  },
+  "devDependencies": {
+    "@convex-dev/eslint-plugin": "^1.1.1",
+    "@types/node": "^25.0.6",
+    "typescript": "^5.9.3"
+  }
+}
