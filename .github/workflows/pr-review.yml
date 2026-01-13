@@ -24,7 +24,7 @@ jobs:
           track_progress: true
           prompt: |
             /review REPO: ${{ github.repository }} PR #${{ github.event.pull_request.number }}
-            
+
             Post results using `gh pr comment` with inline comments for specific issues and top-level summary.
 
           claude_args: |
