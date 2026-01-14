@@ -1,7 +1,7 @@
 pre-commit:
   parallel: true
-  commands:
-    check:
+  jobs:
+    - name: check
       run: pnpm check
-    check-types:
+    - name: check-types
       run: pnpm check-types
