@@ -1,6 +1,6 @@
 # Tools
 
-## context7 - USE FREQUENTLY
+## context7
 
 Fetches current documentation and code examples from official sources. Training data gets outdated - use this for accurate, current knowledge.
 
@@ -18,11 +18,8 @@ Fetches current documentation and code examples from official sources. Training 
 - Migration guides, deprecation handling
 - Any uncertainty about current best practices
 
-**How**: `resolve-library-id` → `query-docs` with specific question
-
 **Examples**:
 
-- "implement React useEffect" → context7 (official patterns)
 - "Convex query syntax" → context7 (current API)
 - "Auth0 authentication" → context7 (official flow)
 - "explain this function" → native (no external docs needed)
