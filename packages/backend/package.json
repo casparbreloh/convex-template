@@ -9,14 +9,14 @@
     "dev": "convex dev"
   },
   "dependencies": {
-    "@convex-dev/better-auth": "^0.10.10",
-    "better-auth": "1.4.9",
-    "convex": "^1.31.4",
+    "@convex-dev/better-auth": "catalog:",
+    "better-auth": "catalog:",
+    "convex": "catalog:",
     "convex-helpers": "^0.1.109"
   },
   "devDependencies": {
     "@convex-dev/eslint-plugin": "^1.1.1",
-    "@types/node": "^25.0.8",
-    "typescript": "^5.9.3"
+    "@types/node": "catalog:",
+    "typescript": "catalog:"
   }
 }
