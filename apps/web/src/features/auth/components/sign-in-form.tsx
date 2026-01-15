@@ -1,11 +1,5 @@
 import { Button } from "@repo/ui/components/shadcn/button"
-import {
-  Field,
-  FieldDescription,
-  FieldError,
-  FieldGroup,
-  FieldLabel,
-} from "@repo/ui/components/shadcn/field"
+import { Field, FieldError, FieldGroup, FieldLabel } from "@repo/ui/components/shadcn/field"
 import { Input } from "@repo/ui/components/shadcn/input"
 import { cn } from "@repo/ui/lib/utils"
 import { useForm } from "@tanstack/react-form"
@@ -48,7 +42,9 @@ export function SignInForm({ onSubmit, className }: SignInFormProps) {
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
                 <h1 className="text-xl font-bold">Welcome</h1>
-                <FieldDescription>Enter your email to receive a verification code</FieldDescription>
+                <p className="text-muted-foreground text-sm">
+                  Enter your email to receive a verification code
+                </p>
               </div>
               <form.Field name="email">
                 {(field) => (

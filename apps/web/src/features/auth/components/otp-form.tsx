@@ -1,4 +1,4 @@
-import { Field, FieldDescription, FieldGroup, FieldLabel } from "@repo/ui/components/shadcn/field"
+import { Field, FieldGroup, FieldLabel } from "@repo/ui/components/shadcn/field"
 import {
   InputOTP,
   InputOTPGroup,
@@ -47,7 +47,7 @@ export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
             <FieldGroup>
               <div className="flex flex-col items-center gap-2 text-center">
                 <h1 className="text-xl font-bold">Enter verification code</h1>
-                <FieldDescription>We sent a 6-digit code to {email}</FieldDescription>
+                <p className="text-muted-foreground text-sm">We sent a 6-digit code to {email}</p>
               </div>
               <form.Field name="otp">
                 {(field) => (
