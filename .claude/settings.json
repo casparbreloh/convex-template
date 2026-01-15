@@ -3,8 +3,8 @@
     "Stop": [
       {
         "hooks": [
-          { "type": "command", "command": "pnpm check", "timeout": 120 },
-          { "type": "command", "command": "pnpm check-types", "timeout": 120 }
+          { "type": "command", "command": "pnpm run check", "timeout": 120 },
+          { "type": "command", "command": "pnpm run check-types", "timeout": 120 }
         ]
       }
     ]
