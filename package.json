@@ -5,13 +5,13 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "check": "run-p format lint typecheck",
+    "check": "pnpm run format && pnpm run lint && pnpm run typecheck",
     "clean": "rimraf --glob dist .output node_modules .tanstack *.tsbuildinfo",
-    "dev": "run-p \"convex dev\" \"vite dev\"",
+    "dev": "npm-run-all --parallel \"convex dev\" \"vite dev\"",
     "format": "oxfmt",
     "lint": "oxlint",
     "start": "vite start",
-    "typecheck": "run-p \"tsc --noEmit\" \"tsc --noEmit -p convex/tsconfig.json\""
+    "typecheck": "tsc --noEmit && tsc --noEmit -p convex/tsconfig.json"
   },
   "dependencies": {
     "@base-ui/react": "^1.1.0",

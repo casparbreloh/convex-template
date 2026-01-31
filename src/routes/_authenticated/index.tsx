@@ -1,10 +1,10 @@
 import { convexQuery } from "@convex-dev/react-query"
-import { api } from "@repo/backend/convex/_generated/api"
 import { useQuery } from "@tanstack/react-query"
 import { createFileRoute } from "@tanstack/react-router"
 
 import { Header } from "@/components/layout/header.tsx"
 import { Main } from "@/components/layout/main.tsx"
+import {api} from "../../../convex/_generated/api";
 
 export const Route = createFileRoute("/_authenticated/")({
   component: RouteComponent,
