@@ -9,10 +9,10 @@ import tsconfigPaths from "vite-tsconfig-paths"
 export default defineConfig({
   plugins: [
     devtools(),
+    nitro({ preset: "aws-amplify", output: { dir: "dist" } }),
     tsconfigPaths(),
     tailwindcss(),
     tanstackStart(),
-    nitro({ preset: "aws_amplify", output: { dir: "dist" } }),
     viteReact({
       babel: {
         plugins: ["babel-plugin-react-compiler"],

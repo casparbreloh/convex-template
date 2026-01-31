@@ -7,7 +7,6 @@ frontend:
         - pnpm install --frozen-lockfile
     build:
       commands:
-        - env | grep -e VITE_ >> .env.production
         - pnpm run build
   artifacts:
     baseDirectory: dist
