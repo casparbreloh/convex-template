@@ -1,4 +1,4 @@
-import { SidebarInset, SidebarProvider } from "@repo/ui/components/shadcn/sidebar"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router"
 
 import { AppSidebar } from "@/components/layout/app-sidebar.tsx"

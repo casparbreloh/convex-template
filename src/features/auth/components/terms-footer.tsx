@@ -1,4 +1,4 @@
-import { FieldDescription } from "@repo/ui/components/shadcn/field"
+import { FieldDescription } from "@/components/ui/field"
 
 export function TermsFooter() {
   return (

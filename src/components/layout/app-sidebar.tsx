@@ -7,7 +7,7 @@ import {
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-} from "@repo/ui/components/shadcn/sidebar"
+} from "@/components/ui/sidebar"
 import { Link } from "@tanstack/react-router"
 
 import { NavGroup, NavGroupItem } from "@/components/layout/nav-group"

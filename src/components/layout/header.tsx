@@ -1,4 +1,4 @@
-import { SidebarTrigger } from "@repo/ui/components/shadcn/sidebar"
+import { SidebarTrigger } from "@/components/ui/sidebar"
 import { cn } from "@repo/ui/lib/utils"
 
 type HeaderProps = React.HTMLAttributes<HTMLElement> & {

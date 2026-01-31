@@ -6,7 +6,7 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@repo/ui/components/shadcn/sidebar"
+} from "@/components/ui/sidebar"
 import { Link, useLocation } from "@tanstack/react-router"
 
 export function NavGroup({ title, children }: { title?: string; children: React.ReactNode }) {

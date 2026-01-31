@@ -3,7 +3,7 @@ import type { QueryClient } from "@tanstack/react-query"
 import type { ConvexReactClient } from "convex/react"
 
 import { ConvexBetterAuthProvider } from "@convex-dev/better-auth/react"
-import { Toaster } from "@repo/ui/components/shadcn/sonner"
+import { Toaster } from "@/components/ui/sonner"
 import { TanStackDevtools } from "@tanstack/react-devtools"
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools"
 import {
@@ -18,7 +18,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { authClient } from "@/lib/auth-client.ts"
 import { authQueryOptions } from "@/lib/queries.ts"
 
-import appCss from "../index.css?url"
+import appCss from "@/styles/index.css?url"
 
 export interface RouterAppContext {
   queryClient: QueryClient
