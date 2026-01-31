@@ -4,7 +4,8 @@ import { createFileRoute } from "@tanstack/react-router"
 
 import { Header } from "@/components/layout/header.tsx"
 import { Main } from "@/components/layout/main.tsx"
-import {api} from "../../../convex/_generated/api";
+
+import { api } from "../../../convex/_generated/api"
 
 export const Route = createFileRoute("/_authenticated/")({
   component: RouteComponent,

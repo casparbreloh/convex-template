@@ -1,9 +1,9 @@
-import { cn } from "@/lib/utils"
 import { useForm } from "@tanstack/react-form"
 import { z } from "zod"
 
 import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
 import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"
+import { cn } from "@/lib/utils"
 
 import { TermsFooter } from "./terms-footer"
 
