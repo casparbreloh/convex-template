@@ -1,63 +1,65 @@
 # Tools
 
+## references
+
+Additional directory (`/Users/casparbreloh/Developer/References`) with downloaded repositories for code inspection.
+
+**Contains**:
+
+- Open source projects for implementation patterns and inspiration
+- Library source code for up-to-date, accurate API usage (more current than docs)
+
+**Use when**:
+
+- User mentions checking references or specific downloaded repos
+- Need real implementation examples from libraries you're using
+- Want to see actual code structure of dependencies
+
 ## context7
 
-Fetches current documentation and code examples from official sources. Training data gets outdated - use this for accurate, current knowledge.
+Fetches current documentation and code examples from official library sources.
 
-**Triggers**:
+**Use for**:
 
-- Import statements, library-specific APIs
+- Library-specific APIs, authentication flows, configuration options
 - Framework patterns (React hooks, Vue composition, etc.)
-- Version-specific implementations
+- Official implementation patterns, migration guides
 - "How do I use X with Y" questions
 
 **Choose over native knowledge when**:
 
 - Implementation must follow official patterns
-- API signatures, config options, authentication flows
-- Migration guides, deprecation handling
-- Any uncertainty about current best practices
-
-**Examples**:
-
-- "Convex query syntax" → context7 (current API)
-- "Auth0 authentication" → context7 (official flow)
-- "explain this function" → native (no external docs needed)
+- Uncertain about current best practices or API signatures
+- Working with version-specific features
 
 ## websearch
 
-Web search for broader or recent information context7 doesn't cover.
+Web search for broader context, recent information, or community solutions.
 
-**Triggers**:
+**Use for**:
 
-- Very recent changes (last few months)
-- Community discussions, Stack Overflow patterns
-- Comparisons between tools/approaches
-- Error messages, troubleshooting
-- Non-library topics (deployment, infrastructure)
+- Very recent changes, community discussions, error troubleshooting
+- Comparisons between tools, opinions, benchmarks
+- Topics spanning multiple services or non-library questions
 
-**Choose over context7 when**:
+**Choose when**:
 
-- Need community solutions, workarounds
-- Topic spans multiple tools/services
-- Looking for opinions, benchmarks
+- Need community workarounds or Stack Overflow patterns
 - Context7 returns insufficient results
+- Looking for deployment, infrastructure, or general web topics
 
 ## sequential-thinking
 
-Structured step-by-step reasoning for complex problems.
+Structured reasoning for complex architectural and design decisions.
 
-**Triggers**:
+**Use for**:
 
-- Architectural decisions with trade-offs
-- Multi-system integrations
-- Problems with unclear scope or requirements
-- Debugging complex issues
+- Architectural decisions with multiple trade-offs
+- Multi-system integrations, problems with unclear scope
 - Design decisions affecting multiple files/components
 
-**Use when**:
+**When to use**:
 
-- Multiple valid approaches exist
-- Need to reason through consequences
-- Problem requires decomposition
-- Uncertainty about best path forward
+- Multiple valid approaches exist and need evaluation
+- Problem requires decomposition or reasoning through consequences
+- Uncertainty about best implementation path

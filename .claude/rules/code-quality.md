@@ -11,3 +11,4 @@
 - DRY business logic only - duplicate code across contexts is fine
 - Readability > cleverness, meaningful names > comments
 - Abstract after 3+ repetitions, not before
+- **No docstrings or comments** - code should be self-explanatory (only add if explicitly requested)
