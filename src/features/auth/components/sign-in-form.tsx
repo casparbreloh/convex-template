@@ -1,9 +1,10 @@
-import { Button } from "@/components/ui/button"
-import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
 import { cn } from "@repo/ui/lib/utils"
 import { useForm } from "@tanstack/react-form"
 import { z } from "zod"
+
+import { Button } from "@/components/ui/button"
+import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field"
+import { Input } from "@/components/ui/input"
 
 import { TermsFooter } from "./terms-footer"
 

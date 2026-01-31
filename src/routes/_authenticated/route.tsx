@@ -1,7 +1,7 @@
-import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 import { createFileRoute, Outlet, redirect } from "@tanstack/react-router"
 
 import { AppSidebar } from "@/components/layout/app-sidebar.tsx"
+import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar"
 
 export const Route = createFileRoute("/_authenticated")({
   beforeLoad: async ({ context }) => {

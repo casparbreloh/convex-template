@@ -1,5 +1,6 @@
-import { SidebarTrigger } from "@/components/ui/sidebar"
 import { cn } from "@repo/ui/lib/utils"
+
+import { SidebarTrigger } from "@/components/ui/sidebar"
 
 type HeaderProps = React.HTMLAttributes<HTMLElement> & {
   ref?: React.Ref<HTMLElement>

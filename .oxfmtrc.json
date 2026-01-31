@@ -6,9 +6,5 @@
   },
   "experimentalTailwindcss": {},
   "semi": false,
-  "ignorePatterns": [
-    "**/pnpm-lock.yaml",
-    "**/routeTree.gen.ts",
-    "**/convex/_generated/**"
-  ]
+  "ignorePatterns": ["**/pnpm-lock.yaml", "**/routeTree.gen.ts", "**/convex/_generated/**"]
 }

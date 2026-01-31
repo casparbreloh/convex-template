@@ -1,5 +1,7 @@
 import type * as React from "react"
 
+import { Link, useLocation } from "@tanstack/react-router"
+
 import {
   SidebarGroup,
   SidebarGroupLabel,
@@ -7,7 +9,6 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-import { Link, useLocation } from "@tanstack/react-router"
 
 export function NavGroup({ title, children }: { title?: string; children: React.ReactNode }) {
   return (
