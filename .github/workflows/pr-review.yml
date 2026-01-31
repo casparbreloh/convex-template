@@ -36,12 +36,10 @@ jobs:
 
             ### Summary Comment (post via gh pr comment)
 
-            Include this structure:
-
             ```
             ## PR Review
 
-            **Score: X/10** | **Review Effort: X/5** (1=trivial, 5=extensive)
+            **Score: X/10**
 
             ### Summary
             2-3 sentences on what this PR does and overall assessment.
@@ -89,13 +87,12 @@ jobs:
             - Focus on substance, not style nitpicks
             - Be concise - one clear point per comment
             - Only flag real issues with actual impact
-            - If a section has no issues, say "None found"
+            - Tests are not required for this project
             - Don't pad with false praise
 
             ## Score Reference
 
             **Overall (1-10):** 9-10 ship it, 7-8 approve with comments, 5-6 needs work, 3-4 request changes, 1-2 major problems
-            **Effort (1-5):** 1=trivial (<50 lines), 2=minor, 3=moderate, 4=significant, 5=extensive (500+ lines, architectural)
 
           claude_args: |
             --allowedTools "mcp__github_inline_comment__create_inline_comment,Bash(gh pr comment:*),Bash(gh pr diff:*),Bash(gh pr view:*)"
