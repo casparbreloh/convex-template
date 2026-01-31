@@ -9,7 +9,7 @@ import tsconfigPaths from "vite-tsconfig-paths"
 export default defineConfig({
   plugins: [
     devtools(),
-    nitro({ preset: "aws-amplify", output: { dir: "dist" } }),
+    nitro(),
     tsconfigPaths(),
     tailwindcss(),
     tanstackStart(),
