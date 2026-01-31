@@ -6,7 +6,7 @@
   "scripts": {
     "build": "vite build",
     "check": "pnpm run format && pnpm run lint && pnpm run typecheck",
-    "clean": "rimraf --glob dist node_modules *.tsbuildinfo .tanstack",
+    "clean": "rimraf --glob dist .output node_modules *.tsbuildinfo .tanstack",
     "dev": "npm-run-all --parallel dev:*",
     "dev:backend": "convex dev",
     "dev:frontend": "vite dev",
