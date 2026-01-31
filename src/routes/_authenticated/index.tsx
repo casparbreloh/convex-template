@@ -2,8 +2,8 @@ import { convexQuery } from "@convex-dev/react-query"
 import { useQuery } from "@tanstack/react-query"
 import { createFileRoute } from "@tanstack/react-router"
 
-import { Header } from "@/components/layout/header.tsx"
-import { Main } from "@/components/layout/main.tsx"
+import { Header } from "@/components/layout/header"
+import { Main } from "@/components/layout/main"
 
 import { api } from "../../../convex/_generated/api"
 

@@ -15,17 +15,15 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 
 import { Toaster } from "@/components/ui/sonner"
-import { authClient } from "@/lib/auth-client.ts"
-import { authQueryOptions } from "@/lib/queries.ts"
+import { authClient } from "@/lib/auth-client"
+import { authQueryOptions } from "@/lib/queries"
 import appCss from "@/styles/index.css?url"
 
-export interface RouterAppContext {
+export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
   convexClient: ConvexReactClient
   convexQueryClient: ConvexQueryClient
-}
-
-export const Route = createRootRouteWithContext<RouterAppContext>()({
+}>()({
   beforeLoad: async ({ context }) => {
     const token = await context.queryClient.ensureQueryData({
       ...authQueryOptions,
@@ -51,7 +49,7 @@ export const Route = createRootRouteWithContext<RouterAppContext>()({
         name: "viewport",
       },
       {
-        title: "Repo",
+        title: "Convex Template",
       },
     ],
   }),

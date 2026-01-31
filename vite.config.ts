@@ -12,7 +12,7 @@ export default defineConfig({
     tsconfigPaths(),
     tailwindcss(),
     tanstackStart(),
-    nitro(),
+    nitro({ preset: "aws_amplify", output: { dir: "dist" } }),
     viteReact({
       babel: {
         plugins: ["babel-plugin-react-compiler"],

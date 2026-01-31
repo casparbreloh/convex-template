@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useRouter, useSearch } from "@tanstack/react-router"
 import { toast } from "sonner"
 
-import { authClient } from "@/lib/auth-client.ts"
+import { authClient } from "@/lib/auth-client"
 
 import { OTPForm } from "./components/otp-form"
 import { SignInForm } from "./components/sign-in-form"
@@ -49,7 +49,7 @@ export function SignIn() {
   }
 
   return (
-    <div className="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10">
+    <div className="bg-background flex min-h-svh flex-col items-center justify-center gap-6 p-6 sm:p-10">
       <div className="w-full max-w-sm">
         {!email ? (
           <SignInForm onSubmit={handleSignIn} />

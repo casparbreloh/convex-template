@@ -1,6 +1,6 @@
 import { queryOptions } from "@tanstack/react-query"
 
-import { getAuth } from "@/lib/functions.ts"
+import { getAuth } from "@/lib/functions"
 
 export const authQueryOptions = queryOptions({
   queryKey: ["auth"],
