@@ -17,7 +17,7 @@ import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 import { Toaster } from "@/components/ui/sonner"
 import { authClient } from "@/lib/auth-client"
 import { authQueryOptions } from "@/lib/queries"
-import appCss from "@/styles/index.css?url"
+import "@/styles/index.css"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
@@ -34,12 +34,6 @@ export const Route = createRootRouteWithContext<{
   },
   component: RootComponent,
   head: () => ({
-    links: [
-      {
-        href: appCss,
-        rel: "stylesheet",
-      },
-    ],
     meta: [
       {
         charSet: "utf-8",
