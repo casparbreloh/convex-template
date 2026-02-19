@@ -1,0 +1,3 @@
+[build]
+command = "pnpm dlx convex deploy --cmd 'pnpm run build'"
+publish = "dist/client"
