@@ -2,7 +2,7 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useRouter, useSearch } from "@tanstack/react-router"
 import { toast } from "sonner"
 
-import { authClient } from "@/lib/auth-client"
+import { authClient } from "@/lib/auth"
 
 import { OTPForm } from "./components/otp-form"
 import { SignInForm } from "./components/sign-in-form"

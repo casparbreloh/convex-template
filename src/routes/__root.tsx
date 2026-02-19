@@ -15,8 +15,7 @@ import {
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
 
 import { Toaster } from "@/components/ui/sonner"
-import { authClient } from "@/lib/auth-client"
-import { authQueryOptions } from "@/lib/queries"
+import { authClient, authQueryOptions } from "@/lib/auth"
 import "@/styles/index.css"
 
 export const Route = createRootRouteWithContext<{
