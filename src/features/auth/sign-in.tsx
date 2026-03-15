@@ -1,30 +1,25 @@
+import { useAuthActions } from "@convex-dev/auth/react"
 import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useRouter, useSearch } from "@tanstack/react-router"
 import { toast } from "sonner"
-
-import { authClient } from "@/lib/auth"
 
 import { OTPForm } from "./components/otp-form"
 import { SignInForm } from "./components/sign-in-form"
 
 export function SignIn() {
+  const { signIn } = useAuthActions()
   const queryClient = useQueryClient()
   const router = useRouter()
   const navigate = useNavigate({ from: "/sign-in" })
   const { email } = useSearch({ from: "/_auth/sign-in" })
 
   async function handleSignIn(email: string) {
-    const { error } = await authClient.emailOtp.sendVerificationOtp({
-      email,
-      type: "sign-in",
-    })
-
-    if (error) {
-      toast.error(error.message)
-      return
+    try {
+      await signIn("email-otp", { email })
+      await navigate({ search: { email } })
+    } catch {
+      toast.error("Failed to send verification code")
     }
-
-    await navigate({ search: { email } })
   }
 
   async function handleVerifyOTP(otp: string) {
@@ -33,19 +28,14 @@ export function SignIn() {
       return
     }
 
-    const { error } = await authClient.signIn.emailOtp({
-      email,
-      otp,
-    })
-
-    if (error) {
-      toast.error(error.message)
-      return
+    try {
+      await signIn("email-otp", { email, code: otp })
+      await queryClient.resetQueries()
+      await router.invalidate()
+      await navigate({ to: "/" })
+    } catch {
+      toast.error("Invalid verification code")
     }
-
-    await queryClient.resetQueries()
-    await router.invalidate()
-    await navigate({ to: "/" })
   }
 
   return (

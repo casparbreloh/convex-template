@@ -1,9 +1,12 @@
+import { registerStaticRoutes } from "@convex-dev/static-hosting"
 import { httpRouter } from "convex/server"
 
-import { authComponent, createAuth } from "./auth"
+import { components } from "./_generated/api"
+import { auth } from "./auth"
 
 const http = httpRouter()
 
-authComponent.registerRoutes(http, createAuth)
+auth.addHttpRoutes(http)
+registerStaticRoutes(http, components.selfHosting)
 
 export default http
