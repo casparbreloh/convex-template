@@ -1,4 +1,5 @@
-import { createFileRoute, redirect } from "@tanstack/react-router"
+import { createFileRoute, Navigate } from "@tanstack/react-router"
+import { Authenticated, Unauthenticated } from "convex/react"
 import { z } from "zod"
 
 import { SignIn } from "@/features/auth/sign-in"
@@ -8,9 +9,19 @@ const searchSchema = z.object({
 })
 
 export const Route = createFileRoute("/_auth/sign-in")({
-  beforeLoad: async ({ context }) => {
-    if (context.isAuthenticated) throw redirect({ to: "/" })
-  },
-  component: SignIn,
+  component: RouteComponent,
   validateSearch: searchSchema,
 })
+
+function RouteComponent() {
+  return (
+    <>
+      <Authenticated>
+        <Navigate to="/" />
+      </Authenticated>
+      <Unauthenticated>
+        <SignIn />
+      </Unauthenticated>
+    </>
+  )
+}

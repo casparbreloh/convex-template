@@ -1,9 +1,5 @@
-import {
-  customAction,
-  customCtx,
-  customMutation,
-  customQuery,
-} from "convex-helpers/server/customFunctions"
+import { getAuthUserId } from "@convex-dev/auth/server"
+import { customCtx, customMutation, customQuery } from "convex-helpers/server/customFunctions"
 import {
   type Rules,
   wrapDatabaseReader,
@@ -11,7 +7,7 @@ import {
 } from "convex-helpers/server/rowLevelSecurity"
 import { Triggers } from "convex-helpers/server/triggers"
 
-import type { DataModel } from "./_generated/dataModel"
+import type { DataModel, Id } from "./_generated/dataModel"
 
 import {
   action as baseAction,
@@ -23,7 +19,6 @@ import {
   query as baseQuery,
   type QueryCtx,
 } from "./_generated/server"
-import { authComponent } from "./auth"
 
 const triggers = new Triggers<DataModel>()
 
@@ -34,13 +29,13 @@ const triggers = new Triggers<DataModel>()
 //   }
 // })
 
-function rules(_user: Awaited<ReturnType<typeof authComponent.getAuthUser>>) {
+function rules(_userId: Id<"users">) {
   return {
     // Define row-level security rules per table:
     // tableName: {
-    //   read: async (ctx, doc) => doc.userId === user._id,
-    //   modify: async (ctx, doc) => doc.userId === user._id,
-    //   insert: async (ctx, doc) => doc.userId === user._id,
+    //   read: async (ctx, doc) => doc.userId === userId,
+    //   modify: async (ctx, doc) => doc.userId === userId,
+    //   insert: async (ctx, doc) => doc.userId === userId,
     // },
   } satisfies Rules<QueryCtx, DataModel>
 }
@@ -55,13 +50,19 @@ export const action = baseAction
 export const internalAction = baseInternalAction
 export const httpAction = baseHttpAction
 
+async function requireAuthUserId(ctx: QueryCtx) {
+  const userId = await getAuthUserId(ctx)
+  if (!userId) throw new Error("Not authenticated")
+  return userId
+}
+
 export const authenticatedQuery = customQuery(
   query,
   customCtx(async (ctx) => {
-    const user = await authComponent.getAuthUser(ctx)
+    const userId = await requireAuthUserId(ctx)
     return {
-      user,
-      db: wrapDatabaseReader(ctx, ctx.db, rules(user)),
+      userId,
+      db: wrapDatabaseReader(ctx, ctx.db, rules(userId)),
     }
   }),
 )
@@ -69,18 +70,10 @@ export const authenticatedQuery = customQuery(
 export const authenticatedMutation = customMutation(
   mutation,
   customCtx(async (ctx) => {
-    const user = await authComponent.getAuthUser(ctx)
+    const userId = await requireAuthUserId(ctx)
     return {
-      user,
-      db: wrapDatabaseWriter(ctx, ctx.db, rules(user)),
+      userId,
+      db: wrapDatabaseWriter(ctx, ctx.db, rules(userId)),
     }
-  }),
-)
-
-export const authenticatedAction = customAction(
-  action,
-  customCtx(async (ctx) => {
-    const user = await authComponent.getAuthUser(ctx)
-    return { user }
   }),
 )
