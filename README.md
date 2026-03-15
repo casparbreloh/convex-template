@@ -30,9 +30,9 @@ pnpm deploy
 
 ## Commands
 
-| Command       | Description                                                         |
-| ------------- | ------------------------------------------------------------------- |
-| `pnpm dev`    | Start frontend + backend dev servers                                |
-| `pnpm build`  | Build the SPA for production                                        |
-| `pnpm deploy` | Build, deploy Convex backend, and upload static files to production |
-| `pnpm check`  | Run formatter, linter, and typechecker                              |
+| Command           | Description                                                         |
+| ----------------- | ------------------------------------------------------------------- |
+| `pnpm run dev`    | Start frontend + backend dev servers                                |
+| `pnpm run build`  | Build the SPA for production                                        |
+| `pnpm run deploy` | Build, deploy Convex backend, and upload static files to production |
+| `pnpm run check`  | Run formatter, linter, and typechecker                              |

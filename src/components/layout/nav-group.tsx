@@ -1,6 +1,5 @@
-import type * as React from "react"
-
 import { Link, useLocation } from "@tanstack/react-router"
+import type * as React from "react"
 
 import {
   SidebarGroup,

@@ -1,8 +1,7 @@
-import type * as React from "react"
-
 import { Home01Icon } from "@hugeicons/core-free-icons"
 import { HugeiconsIcon } from "@hugeicons/react"
 import { Link } from "@tanstack/react-router"
+import type * as React from "react"
 
 import { NavGroup, NavGroupItem } from "@/components/layout/nav-group"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader } from "@/components/ui/sidebar"

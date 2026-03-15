@@ -8,7 +8,6 @@ import {
 import { Triggers } from "convex-helpers/server/triggers"
 
 import type { DataModel, Id } from "./_generated/dataModel"
-
 import {
   action as baseAction,
   httpAction as baseHttpAction,

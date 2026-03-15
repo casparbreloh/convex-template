@@ -1,10 +1,7 @@
 {
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
-  "experimentalSortImports": {},
-  "experimentalSortPackageJson": {
-    "sortScripts": true
-  },
-  "experimentalTailwindcss": {},
+  "sortImports": {},
+  "sortTailwindcss": {},
   "semi": false,
-  "ignorePatterns": ["**/pnpm-lock.yaml", "**/routeTree.gen.ts", "**/convex/_generated/**"]
+  "ignorePatterns": ["**/routeTree.gen.ts", "**/convex/_generated/**"]
 }
