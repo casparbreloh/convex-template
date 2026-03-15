@@ -33,3 +33,5 @@ jobs:
       - run: pnpm run check
 
       - run: pnpm run build
+        env:
+          VITE_CONVEX_URL: https://placeholder.convex.cloud
