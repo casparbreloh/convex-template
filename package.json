@@ -4,10 +4,11 @@
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "check": "pnpm run format && pnpm run lint && pnpm run typecheck",
+    "check": "pnpm run format-check && pnpm run lint && pnpm run typecheck",
     "deploy": "pnpm dlx @convex-dev/static-hosting deploy --dist dist/client",
     "dev": "convex dev & vite dev",
     "format": "oxfmt",
+    "format-check": "oxfmt --check",
     "lint": "oxlint",
     "typecheck": "tsc --noEmit && tsc --noEmit -p convex/tsconfig.json"
   },
@@ -54,6 +55,9 @@
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3",
     "vite": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=22"
   },
   "packageManager": "pnpm@10.24.0"
 }
