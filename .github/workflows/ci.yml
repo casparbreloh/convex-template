@@ -1,4 +1,4 @@
-name: CI/CD
+name: CI
 
 on:
   push:
@@ -45,22 +45,3 @@ jobs:
         env:
           # Vite needs VITE_CONVEX_URL at build time to construct ConvexReactClient.
           VITE_CONVEX_URL: https://placeholder.convex.cloud
-
-  deploy:
-    name: Deploy
-    needs: build
-    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    environment: production
-    steps:
-      - uses: actions/checkout@v5
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v6
-        with:
-          node-version-file: package.json
-          cache: pnpm
-      - run: pnpm install --frozen-lockfile
-      - run: pnpm run deploy
-        env:
-          CONVEX_DEPLOY_KEY: ${{ secrets.CONVEX_DEPLOY_KEY }}
