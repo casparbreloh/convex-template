@@ -1,14 +1,13 @@
+import babel from "@rolldown/plugin-babel"
 import tailwindcss from "@tailwindcss/vite"
 import { devtools } from "@tanstack/devtools-vite"
 import { tanstackStart } from "@tanstack/react-start/plugin/vite"
-import viteReact from "@vitejs/plugin-react"
+import viteReact, { reactCompilerPreset } from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
-import tsconfigPaths from "vite-tsconfig-paths"
 
 export default defineConfig({
   plugins: [
     devtools(),
-    tsconfigPaths(),
     tailwindcss(),
     tanstackStart({
       spa: {
@@ -18,12 +17,12 @@ export default defineConfig({
         },
       },
     }),
-    viteReact({
-      babel: {
-        plugins: ["babel-plugin-react-compiler"],
-      },
-    }),
+    viteReact(),
+    babel({ presets: [reactCompilerPreset()] } as Parameters<typeof babel>[0]),
   ],
+  resolve: {
+    tsconfigPaths: true,
+  },
   server: {
     port: 5173,
   },

@@ -1,9 +1,7 @@
-import type { ConvexQueryClient } from "@convex-dev/react-query"
-import type { QueryClient } from "@tanstack/react-query"
-import type { ConvexReactClient } from "convex/react"
-
 import { ConvexAuthProvider } from "@convex-dev/auth/react"
+import type { ConvexQueryClient } from "@convex-dev/react-query"
 import { TanStackDevtools } from "@tanstack/react-devtools"
+import type { QueryClient } from "@tanstack/react-query"
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools"
 import {
   createRootRouteWithContext,
@@ -13,8 +11,10 @@ import {
   useRouteContext,
 } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
+import type { ConvexReactClient } from "convex/react"
 
 import { Toaster } from "@/components/ui/sonner"
+
 import "@/styles/index.css"
 
 export const Route = createRootRouteWithContext<{
