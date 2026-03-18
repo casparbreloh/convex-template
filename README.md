@@ -13,14 +13,14 @@ TanStack Start + Convex + Convex Auth + Convex Static Hosting.
 ```bash
 pnpm install
 pnpm dlx @convex-dev/auth          # generates JWT keys for dev
-pnpm dev
+pnpm run dev
 ```
 
 ## Production
 
 ```bash
 pnpm dlx @convex-dev/auth --prod   # generates JWT keys for prod
-pnpm deploy
+pnpm run deploy
 ```
 
 | Variable          | Purpose                  | Set by                             |
