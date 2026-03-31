@@ -1,26 +1,13 @@
-import { ConvexAuthProvider } from "@convex-dev/auth/react"
-import type { ConvexQueryClient } from "@convex-dev/react-query"
 import { TanStackDevtools } from "@tanstack/react-devtools"
 import type { QueryClient } from "@tanstack/react-query"
 import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools"
-import {
-  createRootRouteWithContext,
-  HeadContent,
-  Outlet,
-  Scripts,
-  useRouteContext,
-} from "@tanstack/react-router"
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
 import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
-import type { ConvexReactClient } from "convex/react"
 
-import { Toaster } from "@/components/ui/sonner"
-
-import "@/styles/index.css"
+import appCss from "@/styles/index.css?url"
 
 export const Route = createRootRouteWithContext<{
   queryClient: QueryClient
-  convexClient: ConvexReactClient
-  convexQueryClient: ConvexQueryClient
 }>()({
   component: RootComponent,
   head: () => ({
@@ -36,18 +23,19 @@ export const Route = createRootRouteWithContext<{
         title: "Convex Template",
       },
     ],
+    links: [
+      {
+        rel: "stylesheet",
+        href: appCss,
+      },
+    ],
   }),
 })
 
 function RootComponent() {
-  const { convexClient } = useRouteContext({ from: "__root__" })
-
   return (
     <RootDocument>
-      <ConvexAuthProvider client={convexClient}>
-        <Outlet />
-      </ConvexAuthProvider>
-      <Toaster position="top-center" />
+      <Outlet />
       <TanStackDevtools
         plugins={[
           {

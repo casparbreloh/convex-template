@@ -35,7 +35,7 @@ export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          form.handleSubmit()
+          void form.handleSubmit()
         }}
       >
         <form.Subscribe selector={(state) => state.isSubmitting}>
@@ -57,7 +57,7 @@ export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
                       value={field.state.value}
                       onBlur={field.handleBlur}
                       onChange={field.handleChange}
-                      onComplete={() => form.handleSubmit()}
+                      onComplete={() => void form.handleSubmit()}
                       disabled={isSubmitting}
                       containerClassName="gap-4"
                     >

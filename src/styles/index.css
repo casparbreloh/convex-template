@@ -27,11 +27,10 @@
 }
 
 @utility no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
-  } /* Firefox */
+  }
 }
 
 @utility main-container {
