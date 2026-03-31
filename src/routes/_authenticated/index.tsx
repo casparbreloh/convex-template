@@ -28,7 +28,7 @@ function RouteComponent() {
   const healthCheck = useQuery(convexQuery(api.healthCheck.get))
 
   return (
-    <div className="main-container px-4 py-2">
+    <div className="container mx-auto max-w-3xl px-4 py-2">
       <pre className="overflow-x-auto font-mono text-sm">{TITLE_TEXT}</pre>
       <div className="grid gap-6">
         <section className="rounded-lg border p-4">
