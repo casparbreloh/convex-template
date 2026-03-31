@@ -1,4 +1,4 @@
-import { FieldDescription } from "@/components/ui/field"
+import { FieldDescription } from "@/components/ui/field";
 
 export function TermsFooter() {
   return (
@@ -6,5 +6,5 @@ export function TermsFooter() {
       By clicking continue, you agree to our <a href="#">Terms of Service</a> and{" "}
       <a href="#">Privacy Policy</a>.
     </FieldDescription>
-  )
+  );
 }

@@ -1,6 +1,6 @@
-import { exposeDeploymentQuery, exposeUploadApi } from "@convex-dev/static-hosting"
+import { exposeDeploymentQuery, exposeUploadApi } from "@convex-dev/static-hosting";
 
-import { components } from "./_generated/api"
+import { components } from "./_generated/api";
 
 export const {
   generateUploadUrl,
@@ -9,6 +9,6 @@ export const {
   recordAssets,
   gcOldAssets,
   listAssets,
-} = exposeUploadApi(components.selfHosting)
+} = exposeUploadApi(components.selfHosting);
 
-export const { getCurrentDeployment } = exposeDeploymentQuery(components.selfHosting)
+export const { getCurrentDeployment } = exposeDeploymentQuery(components.selfHosting);

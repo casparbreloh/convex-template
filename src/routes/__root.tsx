@@ -1,13 +1,13 @@
-import { TanStackDevtools } from "@tanstack/react-devtools"
-import type { QueryClient } from "@tanstack/react-query"
-import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools"
-import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router"
-import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools"
+import { TanStackDevtools } from "@tanstack/react-devtools";
+import type { QueryClient } from "@tanstack/react-query";
+import { ReactQueryDevtoolsPanel } from "@tanstack/react-query-devtools";
+import { createRootRouteWithContext, HeadContent, Outlet, Scripts } from "@tanstack/react-router";
+import { TanStackRouterDevtoolsPanel } from "@tanstack/react-router-devtools";
 
-import appCss from "@/styles/index.css?url"
+import appCss from "@/styles/index.css?url";
 
 export const Route = createRootRouteWithContext<{
-  queryClient: QueryClient
+  queryClient: QueryClient;
 }>()({
   component: RootComponent,
   head: () => ({
@@ -30,7 +30,7 @@ export const Route = createRootRouteWithContext<{
       },
     ],
   }),
-})
+});
 
 function RootComponent() {
   return (
@@ -49,7 +49,7 @@ function RootComponent() {
         ]}
       />
     </RootDocument>
-  )
+  );
 }
 
 function RootDocument({ children }: { children: React.ReactNode }) {
@@ -63,5 +63,5 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Scripts />
       </body>
     </html>
-  )
+  );
 }

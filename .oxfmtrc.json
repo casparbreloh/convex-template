@@ -2,6 +2,5 @@
   "$schema": "./node_modules/oxfmt/configuration_schema.json",
   "sortImports": {},
   "sortTailwindcss": {},
-  "semi": false,
   "ignorePatterns": ["**/routeTree.gen.ts", "**/convex/_generated/**"]
 }

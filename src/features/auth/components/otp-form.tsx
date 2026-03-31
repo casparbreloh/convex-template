@@ -1,21 +1,26 @@
-import { useForm } from "@tanstack/react-form"
-import { z } from "zod"
+import { useForm } from "@tanstack/react-form";
+import { z } from "zod";
 
-import { Field, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { InputOTP, InputOTPGroup, InputOTPSeparator, InputOTPSlot } from "@/components/ui/input-otp"
-import { cn } from "@/lib/utils"
+import { Field, FieldGroup, FieldLabel } from "@/components/ui/field";
+import {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSeparator,
+  InputOTPSlot,
+} from "@/components/ui/input-otp";
+import { cn } from "@/lib/utils";
 
-import { TermsFooter } from "./terms-footer"
+import { TermsFooter } from "./terms-footer";
 
 type OTPFormProps = {
-  email: string
-  onSubmit: (otp: string) => Promise<void>
-  className?: string
-}
+  email: string;
+  onSubmit: (otp: string) => Promise<void>;
+  className?: string;
+};
 
 const otpFormSchema = z.object({
   otp: z.string().length(6, "Please enter the 6-digit code"),
-})
+});
 
 export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
   const form = useForm({
@@ -26,16 +31,16 @@ export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
       onSubmit: otpFormSchema,
     },
     onSubmit: async ({ value }) => {
-      await onSubmit(value.otp)
+      await onSubmit(value.otp);
     },
-  })
+  });
 
   return (
     <div className={cn("flex flex-col gap-6", className)}>
       <form
         onSubmit={(e) => {
-          e.preventDefault()
-          void form.handleSubmit()
+          e.preventDefault();
+          void form.handleSubmit();
         }}
       >
         <form.Subscribe selector={(state) => state.isSubmitting}>
@@ -82,5 +87,5 @@ export function OTPForm({ email, onSubmit, className }: OTPFormProps) {
       </form>
       <TermsFooter />
     </div>
-  )
+  );
 }

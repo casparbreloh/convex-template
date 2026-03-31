@@ -1,32 +1,32 @@
-import { useAuthActions } from "@convex-dev/auth/react"
-import { useQueryClient } from "@tanstack/react-query"
-import { useNavigate, useRouter, useSearch } from "@tanstack/react-router"
+import { useAuthActions } from "@convex-dev/auth/react";
+import { useQueryClient } from "@tanstack/react-query";
+import { useNavigate, useRouter, useSearch } from "@tanstack/react-router";
 
-import { OTPForm } from "./components/otp-form"
-import { SignInForm } from "./components/sign-in-form"
+import { OTPForm } from "./components/otp-form";
+import { SignInForm } from "./components/sign-in-form";
 
 export function SignIn() {
-  const { signIn } = useAuthActions()
-  const queryClient = useQueryClient()
-  const router = useRouter()
-  const navigate = useNavigate({ from: "/sign-in" })
-  const { email } = useSearch({ from: "/_auth/sign-in" })
+  const { signIn } = useAuthActions();
+  const queryClient = useQueryClient();
+  const router = useRouter();
+  const navigate = useNavigate({ from: "/sign-in" });
+  const { email } = useSearch({ from: "/_auth/sign-in" });
 
   async function handleSignIn(email: string) {
-    await signIn("email-otp", { email })
-    await navigate({ search: { email } })
+    await signIn("email-otp", { email });
+    await navigate({ search: { email } });
   }
 
   async function handleVerifyOTP(otp: string) {
     if (!email) {
-      await navigate({ search: {} })
-      return
+      await navigate({ search: {} });
+      return;
     }
 
-    await signIn("email-otp", { email, code: otp })
-    await queryClient.resetQueries()
-    await router.invalidate()
-    await navigate({ to: "/" })
+    await signIn("email-otp", { email, code: otp });
+    await queryClient.resetQueries();
+    await router.invalidate();
+    await navigate({ to: "/" });
   }
 
   return (
@@ -39,5 +39,5 @@ export function SignIn() {
         )}
       </div>
     </div>
-  )
+  );
 }
