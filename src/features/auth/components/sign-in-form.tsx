@@ -1,21 +1,21 @@
-import { useForm } from "@tanstack/react-form"
-import { z } from "zod"
+import { useForm } from "@tanstack/react-form";
+import { z } from "zod";
 
-import { Button } from "@/components/ui/button"
-import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field"
-import { Input } from "@/components/ui/input"
-import { cn } from "@/lib/utils"
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldGroup, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { cn } from "@/lib/utils";
 
-import { TermsFooter } from "./terms-footer"
+import { TermsFooter } from "./terms-footer";
 
 type SignInFormProps = {
-  onSubmit: (email: string) => Promise<void>
-  className?: string
-}
+  onSubmit: (email: string) => Promise<void>;
+  className?: string;
+};
 
 const signInFormSchema = z.object({
   email: z.email("Please enter a valid email address"),
-})
+});
 
 export function SignInForm({ onSubmit, className }: SignInFormProps) {
   const form = useForm({
@@ -26,16 +26,16 @@ export function SignInForm({ onSubmit, className }: SignInFormProps) {
       onSubmit: signInFormSchema,
     },
     onSubmit: async ({ value }) => {
-      await onSubmit(value.email)
+      await onSubmit(value.email);
     },
-  })
+  });
 
   return (
     <div className={cn("flex flex-col gap-6", className)}>
       <form
         onSubmit={(e) => {
-          e.preventDefault()
-          void form.handleSubmit()
+          e.preventDefault();
+          void form.handleSubmit();
         }}
       >
         <form.Subscribe selector={(state) => state.isSubmitting}>
@@ -75,5 +75,5 @@ export function SignInForm({ onSubmit, className }: SignInFormProps) {
       </form>
       <TermsFooter />
     </div>
-  )
+  );
 }

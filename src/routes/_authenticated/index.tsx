@@ -1,12 +1,12 @@
-import { convexQuery } from "@convex-dev/react-query"
-import { useQuery } from "@tanstack/react-query"
-import { createFileRoute } from "@tanstack/react-router"
+import { convexQuery } from "@convex-dev/react-query";
+import { useQuery } from "@tanstack/react-query";
+import { createFileRoute } from "@tanstack/react-router";
 
-import { api } from "../../../convex/_generated/api"
+import { api } from "../../../convex/_generated/api";
 
 export const Route = createFileRoute("/_authenticated/")({
   component: RouteComponent,
-})
+});
 
 const TITLE_TEXT = `
  ██╗  ██╗███████╗██╗     ██╗      ██████╗
@@ -22,10 +22,10 @@ const TITLE_TEXT = `
  ██║███╗██║██║   ██║██╔══██╗██║     ██║  ██║
  ╚███╔███╔╝╚██████╔╝██║  ██║███████╗██████╔╝
   ╚══╝╚══╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═════╝
- `
+ `;
 
 function RouteComponent() {
-  const healthCheck = useQuery(convexQuery(api.healthCheck.get))
+  const healthCheck = useQuery(convexQuery(api.healthCheck.get));
 
   return (
     <div className="container mx-auto max-w-3xl px-4 py-2">
@@ -48,5 +48,5 @@ function RouteComponent() {
         </section>
       </div>
     </div>
-  )
+  );
 }

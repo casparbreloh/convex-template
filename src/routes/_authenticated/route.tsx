@@ -1,9 +1,9 @@
-import { createFileRoute, Navigate, Outlet } from "@tanstack/react-router"
-import { Authenticated, Unauthenticated } from "convex/react"
+import { createFileRoute, Navigate, Outlet } from "@tanstack/react-router";
+import { Authenticated, Unauthenticated } from "convex/react";
 
 export const Route = createFileRoute("/_authenticated")({
   component: RouteComponent,
-})
+});
 
 function RouteComponent() {
   return (
@@ -15,5 +15,5 @@ function RouteComponent() {
         <Navigate to="/sign-in" />
       </Unauthenticated>
     </>
-  )
+  );
 }
