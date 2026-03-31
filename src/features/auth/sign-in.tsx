@@ -1,7 +1,6 @@
 import { useAuthActions } from "@convex-dev/auth/react"
 import { useQueryClient } from "@tanstack/react-query"
 import { useNavigate, useRouter, useSearch } from "@tanstack/react-router"
-import { toast } from "sonner"
 
 import { OTPForm } from "./components/otp-form"
 import { SignInForm } from "./components/sign-in-form"
@@ -14,12 +13,8 @@ export function SignIn() {
   const { email } = useSearch({ from: "/_auth/sign-in" })
 
   async function handleSignIn(email: string) {
-    try {
-      await signIn("email-otp", { email })
-      await navigate({ search: { email } })
-    } catch {
-      toast.error("Failed to send verification code")
-    }
+    await signIn("email-otp", { email })
+    await navigate({ search: { email } })
   }
 
   async function handleVerifyOTP(otp: string) {
@@ -28,14 +23,10 @@ export function SignIn() {
       return
     }
 
-    try {
-      await signIn("email-otp", { email, code: otp })
-      await queryClient.resetQueries()
-      await router.invalidate()
-      await navigate({ to: "/" })
-    } catch {
-      toast.error("Invalid verification code")
-    }
+    await signIn("email-otp", { email, code: otp })
+    await queryClient.resetQueries()
+    await router.invalidate()
+    await navigate({ to: "/" })
   }
 
   return (

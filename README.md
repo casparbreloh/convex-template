@@ -11,28 +11,29 @@ TanStack Start + Convex + Convex Auth + Convex Static Hosting.
 ## Getting Started
 
 ```bash
-pnpm install
-pnpm dlx @convex-dev/auth          # generates JWT keys for dev
-pnpm run dev
+bun install
+bunx @convex-dev/auth          # generates JWT keys for dev
+bun run dev
 ```
 
 ## Production
 
 ```bash
-pnpm dlx @convex-dev/auth --prod   # generates JWT keys for prod
-pnpm run deploy
+bunx @convex-dev/auth --prod   # generates JWT keys for prod
+bun run deploy
 ```
 
-| Variable          | Purpose                  | Set by                             |
-| ----------------- | ------------------------ | ---------------------------------- |
-| `JWT_PRIVATE_KEY` | Signs JWT session tokens | `pnpm dlx @convex-dev/auth --prod` |
-| `JWKS`            | Public key set for JWT   | `pnpm dlx @convex-dev/auth --prod` |
+| Variable          | Purpose                  | Set by                         |
+| ----------------- | ------------------------ | ------------------------------ |
+| `JWT_PRIVATE_KEY` | Signs JWT session tokens | `bunx @convex-dev/auth --prod` |
+| `JWKS`            | Public key set for JWT   | `bunx @convex-dev/auth --prod` |
 
 ## Commands
 
-| Command           | Description                                                         |
-| ----------------- | ------------------------------------------------------------------- |
-| `pnpm run dev`    | Start frontend + backend dev servers                                |
-| `pnpm run build`  | Build the SPA for production                                        |
-| `pnpm run deploy` | Build, deploy Convex backend, and upload static files to production |
-| `pnpm run check`  | Run formatter, linter, and typechecker                              |
+| Command          | Description                                                         |
+| ---------------- | ------------------------------------------------------------------- |
+| `bun run dev`    | Start frontend + backend dev servers                                |
+| `bun run build`  | Build the SPA for production                                        |
+| `bun run deploy` | Build, deploy Convex backend, and upload static files to production |
+| `bun run format` | Format code with oxfmt                                              |
+| `bun run lint`   | Lint code with oxlint                                               |

@@ -35,7 +35,7 @@ export function SignInForm({ onSubmit, className }: SignInFormProps) {
       <form
         onSubmit={(e) => {
           e.preventDefault()
-          form.handleSubmit()
+          void form.handleSubmit()
         }}
       >
         <form.Subscribe selector={(state) => state.isSubmitting}>

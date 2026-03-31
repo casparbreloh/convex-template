@@ -27,16 +27,8 @@
 }
 
 @utility no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
   &::-webkit-scrollbar {
     display: none;
-  } /* Firefox */
-}
-
-@utility main-container {
-  width: 100%;
-  max-width: 56rem;
-  margin-right: auto;
-  margin-left: auto;
+  }
 }
