@@ -8,7 +8,8 @@ import { ConvexReactClient } from "convex/react";
 import { routeTree } from "./routeTree.gen";
 
 export function getRouter() {
-  const convex = new ConvexReactClient(import.meta.env.VITE_CONVEX_URL ?? "", {
+  const convexUrl = import.meta.env.VITE_CONVEX_URL || "https://placeholder.convex.cloud";
+  const convex = new ConvexReactClient(convexUrl, {
     unsavedChangesWarning: false,
   });
 
